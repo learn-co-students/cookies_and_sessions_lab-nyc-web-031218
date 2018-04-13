@@ -4,7 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :cart
 
+  # config.action_controller.include_all_helpers = true
+
   def cart
     session[:cart] ||= []
   end
+  
 end
