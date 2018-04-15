@@ -1,0 +1,16 @@
+<h1>Cart</h1>
+
+<% if session[:cart] %>
+  <h2>Items in your cart:</h2>
+  <% session[:cart].each do |item| %>
+    <ul>
+      <li><%= item %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+<%= form_tag '/', method: 'post' do %>
+  <%= label_tag 'Product Name' %><br>
+  <%= text_field :cart, :product, id: 'product' %><br>
+  <%= submit_tag 'add to cart' %><br>
+<% end %>
